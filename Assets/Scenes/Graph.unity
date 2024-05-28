@@ -260,7 +260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointPrefab: {fileID: 8008963622147381164, guid: 27086ad9bbbf18140a9382e420e1f80d, type: 3}
-  originRadius: 0.13
+  originRadius: 0.04
+  resolution: 500
 --- !u!1 &1607752223
 GameObject:
   m_ObjectHideFlags: 0
