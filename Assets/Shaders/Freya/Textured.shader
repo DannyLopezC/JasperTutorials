@@ -70,7 +70,7 @@ Shader "Unlit/Textured"
 
                 float4 finalColor = lerp(rock, moss, pattern);
 
-                return finalColor;
+                return moss;
             }
             ENDCG
         }
