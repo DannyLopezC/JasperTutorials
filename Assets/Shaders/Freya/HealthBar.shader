@@ -81,20 +81,20 @@ Shader "Unlit/HealthBar"
             {
                 float2 topDownProjection = i.uv.x;
 
-                float4 finalColor = 0;
+                float4 finalColor = _Background;
                 float4 healthBarTex = tex2D(_HealthBar, topDownProjection);
 
                 if (i.uv.x <= _Health)
                 {
-                    float t = InverseLerp(_FirstThreshold, _SecondThreshold, _Health);
-                    // finalColor = lerp(_StartColor, _EndColor, t);
-                    finalColor = healthBarTex;
+                    float t = saturate(InverseLerp(_FirstThreshold, _SecondThreshold, _Health));
+                    finalColor = lerp(_StartColor, _EndColor, t);
+                    // finalColor = healthBarTex;
 
-                    if (_Health < 0.2)
-                    {
-                        float pulsate = cos(_Time.y * 3) * 0.5 + 0.5;
-                        finalColor = lerp(float4(1, 0, 0, 1), finalColor, pulsate); //* (1 - i.uv.x);
-                    }
+                    // if (_Health < 0.2)
+                    // {
+                    //     float pulsate = cos(_Time.y * 3) * 0.5 + 0.5;
+                    //     finalColor = lerp(float4(1, 0, 0, 1), finalColor, pulsate); //* (1 - i.uv.x);
+                    // }
                 }
 
                 return finalColor;

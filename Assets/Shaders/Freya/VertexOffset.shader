@@ -80,7 +80,7 @@ Shader "Unlit/Vertex Offset"
 
                 // Mapea el valor de la onda al rango de color entre azul y blanco
                 float4 finalColor = lerp(_BlueColor, _BlueColorB, waveValue);
-
+                //Change color for red
                 return finalColor;
             }
             ENDCG
